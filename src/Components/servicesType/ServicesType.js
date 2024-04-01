@@ -1,18 +1,18 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-class ServicesTypeCards extends React.Component {
-  render() {
-    return (
-      <li className="type__item">
-        <img src={this.props.img} />
-        <div className="type__card__content">
-          <h3>{this.props.title}</h3>
-          <p>{this.props.text}</p>
-          <a href="#" className="contact__btn btn">Богланиш</a>
-        </div>
-      </li>
-    );
-  }
+function ServicesTypeCards(props) {
+  const { t } = useTranslation();
+  return (
+    <li className="type__item">
+      <img src={props.img} />
+      <div className="type__card__content">
+        <h3>{props.title}</h3>
+        <p>{props.text}</p>
+        <a href="#" className="contact__btn btn">{t('contactBtn')}</a>
+      </div>
+    </li>
+  );
 }
 
 export default ServicesTypeCards;

@@ -1,68 +1,54 @@
 import React from "react";
+import { useState } from "react";
 import contactImg from "./contact-img.png";
+import { useTranslation } from "react-i18next";
 
+function Contact() {
+  const { t } = useTranslation();
 
-class Contact extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      name: '',
-      phone: '',
-      modalSection: false,
-    }
-  }
-  modalToggle = (e) => {
+  const [myName, setMyName] = useState('');
+  const [myPhone, setMyPhone] = useState('');
+  const [modal, setModal] = useState(false);
+
+  const modalToggle = (e) => {
     e.preventDefault();
-    this.setState({
-      name: '',
-      phone: '',
-      modalSection: true,
-    })
+    setMyName('')  
+    setMyPhone('')  
+    setModal(true)
+    setTimeout(() => setModal(false), 5000)
+  }
+  
+  const removeModal = () => {
+    setModal(false)
   }
 
-  getInputValue = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
-  componentDidMount() {
-    setInterval(this.removeModal, 6000)
-  }
-    
-  removeModal = () => {
-    this.setState((prevState) => ({
-      modalSection: !prevState
-    }))
-  }
-
-  render() {
-    return (
-      <section id="contact">
-        <div className="container">
-          <form id="contact-form" action="" className="contact__form" onSubmit={this.modalToggle}>
-            <img src={contactImg} />
-            <div className="contact__box">
-              <div>
-                <h4>Малумотингизни қолдиринг</h4>
-                <input onChange={this.getInputValue} value={this.state.name} name="name" id="name" placeholder="Исмингиз" required type="text" autoComplete="off" />
-                <input onChange={this.getInputValue} value={this.state.phone} name="phone" id="phone" placeholder="+998-99-044-99-44" required type="number" autoComplete="off" />
-                <button type="submit">Юбориш</button>
-              </div>
+  return (
+    <section id="contact">
+      <div className="container">
+        <form id="contact-form" action="" className="contact__form" onSubmit={modalToggle}>
+          <img src={contactImg} />
+          <div className="contact__box">
+            <div>
+              <h4>{t('contactTitle')}</h4>
+              <input onChange={(e) => setMyName(e.target.value)} value={myName} name="name" id="name" placeholder={t('contactInputPlaceholder')} required type="text" autoComplete="off" />
+              <input onChange={(e) => setMyPhone(e.target.value)} value={myPhone} name="phone" id="phone" placeholder="+998-99-044-99-44" required type="number" autoComplete="off" />
+              <button type="submit">{t('contactSubmit')}</button>
             </div>
-          </form>
-          <section className={`modal__section ${this.state.modalSection && 'active'}`}>
-            <div className="modal__bg"></div>
-            <div className="modal">
-              <div className="modal__content">
-                <i className='bx bx-check'></i>
-                <h3>Мурожатингиз учун ташаккур. Тез орада сизга алоқага чиқамиз.</h3>
-                <i onClick={this.removeModal} className='bx bx-x'></i>
-              </div>
+          </div>
+        </form>
+        <section className={`modal__section ${modal && 'active'}`}>
+          <div className="modal__bg"></div>
+          <div className="modal">
+            <div className="modal__content">
+              <i className='bx bx-check'></i>
+              <h3>{t('modalTitle')}</h3>
+              <i onClick={removeModal} className='bx bx-x'></i>
             </div>
-          </section>
-        </div>
-      </section>
-    );
-  }
+          </div>
+        </section>
+      </div>
+    </section>
+  );
 }
 
 export default Contact;

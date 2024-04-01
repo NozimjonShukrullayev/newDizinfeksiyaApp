@@ -144,9 +144,7 @@ a {
   font-size: 23px;
   font-weight: 500;
 }
-.card__item:last-child h3 {
-  padding: 25px 0 50px 0;
-}
+
 /* ------- IMG MINI SECTION -------- */
 #img-mini-section {
   gap: 25px;
@@ -366,26 +364,38 @@ a {
   pointer-events: none;
   color: var(--font-color);
 }
+.faq__accordion__item.active .faq__item__header i {
+  transform: rotate(180deg);
+}
 .faq__item__header i {
   z-index: 0;
   font-size: 30px;
+  transition: 0.3s;
   pointer-events: none;
+  transform-origin: center center;
 }
-.faq__accordion__item .faq__item__content {
+.faq__accordion__item.active .faq__item__content {
+  height: 100%;
   padding: 25px;
   overflow: hidden;
   transition: 0.3s;
   border-bottom: 1px solid #868686;
 }
-.faq__accordion__item.active .faq__item__content {
+.faq__accordion__item .faq__item__content {
   height: 0;
   padding: 0 25px;
+  transition: 0.3s;
   overflow: visible;
   border-bottom: none;
+  background-color: #f2f2f2;
 }
 .faq__accordion__item.active p {
+  display: block;
+  transition: 0.3s;
+}
+.faq__accordion__item p {
   display: none;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 .faq__item__content p {
   font-size: 18px;
