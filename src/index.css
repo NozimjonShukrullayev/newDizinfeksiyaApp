@@ -279,15 +279,15 @@ a {
 }
 .type__card__content p {
   font-size: 18px;
-  margin-top: 15px;
+  margin: 15px 0 140px 0;
   font-weight: 500;
   line-height: 25px;
   font-family: sans-serif;
   color: var(--text-color);
 }
 .type__card__content a {
-  display: inline-block;
-  margin: 25px 0 0 0;
+  bottom: 40px;
+  position: absolute;
 }
 
 /* ------- SERVICES LICENSIA -------- */
@@ -346,7 +346,7 @@ a {
 }
 .faq__grid h2 {
   grid-row-start: 1;
-  font-size: 32px;
+  font-size: 30px;
 }
 .faq__accordion__list {
   grid-row-start: 2;
@@ -358,7 +358,6 @@ a {
   padding: 25px;
   cursor: pointer;
   align-items: center;
-  /* background-color: #f2f2f2; */
   justify-content: space-between;
   border-bottom: 1px solid #868686;
 }
@@ -590,6 +589,9 @@ a.contact__btn.btn:hover {
     top: 100px;
     width: 170px;
   }
+  #img-mini-section {
+    grid-template-columns: 35% 65%;
+  }
 }
 
 @media only screen and (max-width: 1115px) {
@@ -638,7 +640,6 @@ a.contact__btn.btn:hover {
   .header__nav {
     display: none;
   }
-
   /* ======== HERO ======== */
   #hero-section {
     overflow: hidden;
@@ -648,8 +649,10 @@ a.contact__btn.btn:hover {
     top: 0;
     left: 0;
     width: 100%;
-    position: absolute;
+    height: 100%;
     z-index: -1;
+    object-fit: cover;
+    position: absolute;
   }
   .hero__img::before {
     top: 0;
@@ -664,8 +667,11 @@ a.contact__btn.btn:hover {
   .hero__content {
     z-index: 10;
   }
-  .hero__content h1, .hero__content p {
+  .hero__content h1 {
     color: #f2f2f2;
+  }
+  .hero__content h1, .hero__content p {
+    color: #e6e6e6;
   }
   .hero__content p {
     padding-right: 0px;
@@ -679,15 +685,154 @@ a.contact__btn.btn:hover {
   .card__item p {
     font-size: 18px;
   }
+  /* ======= FAQ ======= */
+  .faq__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 1fr;
+  }
+  .faq__grid h2 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    text-align: center;
+  }
+  .faq__accordion__list {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  /* ========== FOOTER ========== */
+  .footer__list {
+    gap: 25px;
+  }
 }
 
 @media only screen and (max-width: 1015px) {
   /* ========= HERO SECTION ========== */
+  .hero__grid {
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: 60%;
+  }
   .hero__content h1 {
     font-size: 45px;
-    margin: 15px 0;
+    margin: 40px 0;
   }
   .hero__content p {
-    padding-right: 30px;
+    /* padding-right: 30px; */
   }
+  /* ========= ABOUT ========= */
+  .about__grid {
+    gap: 35px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #about-section h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  #img-mini-section {
+    height: 580px;
+    display: grid;
+    overflow: hidden;
+    margin-top: 70px;
+    position: relative;
+    /* align-items: center; */
+    gap: 0px;
+    /* border-radius: 10px; */
+    text-align: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+  /* ========== SERVICES ========= */
+  .services__content {
+    width: 100%;
+  }
+  .services__content h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+  .services__content p {
+    text-align: center;
+  }
+  .services__item {
+    grid-template-columns: 200px auto;
+  }
+  .services__item img {
+    width: 200px;
+  }
+
+  #services-type h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .type__item {
+    grid-template-rows: 35% 65%;
+  }
+  .type__card__content p {
+    font-size: 17px;
+    margin: 15px 0 100px 0;
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .header__logo img,
+  .footer__link img {
+    width: 200px;
+  }
+  /* ========= LICENSIA =========== */
+  #services-licensia {
+    grid-template-columns: 80% auto;
+  }
+  .licensia__content h3 {
+    font-size: 27px;
+  }
+
+  .contact__form {
+    grid-template-columns: 52% auto;
+  }
+  .contact__form img {
+    width: 420px;
+  }
+  .contact__box div {
+    width: 300px;
+    height: 400px;
+    padding: 25px;
+  }
+
+  .faq__item__header h3 {
+    font-size: 21px;
+  }
+  .bx.bxs-map, 
+  .bx-phone-call, 
+  .footer__link .bx.bx-up-arrow-alt {
+    font-size: 28px;
+  }
+
+
+  /* ==============   ================== */
+  .contact__btn.btn {
+    font-size: 17px;
+    font-weight: 400;
+    padding: 16px 26px;
+    border-radius: 30px;
+  }
+}
+@media only screen and (max-width: 815px) {}
+@media only screen and (max-width: 715px) {}
+@media only screen and (max-width: 615px) {}
+@media only screen and (max-width: 515px) {}
+@media only screen and (max-width: 415px) {
+  .container {
+    width: 96%;
+  }
+  .header__grid {
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: auto;
+  }
+  .contact__form {
+    grid-template-columns: 100%;
+    /* background: linear-gradient(#006effb9, #002a79a6); */
+  }
+
+  
 }
