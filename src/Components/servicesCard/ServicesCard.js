@@ -3,7 +3,7 @@ import React from "react";
 class ServicesCards extends React.Component {
   render() {
     return (
-      <li className="services__item">
+      <li data-aos="fade-right" data-aos-duration={this.props.dataAos} className="services__item">
         <img src={this.props.img} />
         <div className="services__item__content">
           <h3>{this.props.title}</h3>

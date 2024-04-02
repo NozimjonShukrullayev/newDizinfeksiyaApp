@@ -9,7 +9,10 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend";
+import { useState, useEffect } from 'react';
 import { Fragment } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 i18n
   .use(initReactI18next)
@@ -28,6 +31,11 @@ i18n
   })
 
 function App() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1200,
+    });
+  })
   return (
     <Fragment>
       <Header />

@@ -7,7 +7,7 @@ function Hero() {
     <section id="hero-section">
       <div className="container">
         <div className="hero__grid">
-          <div className="hero__content">
+          <div data-aos="fade-right" data-aos-duration="5100" className="hero__content">
             <h1>{t('heroTitle')}</h1>
             <p className="paragraph">{t('heroParagraph')}</p>
             <img src="https://www.dezinfeksiyatashkent.uz/assets/diz-main-ee209cbc.png" alt="mini main image"></img>

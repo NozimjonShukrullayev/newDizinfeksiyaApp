@@ -8,11 +8,16 @@ import i18next from "i18next";
 function Header() {
   const { t } = useTranslation();
 
-  const [selectVal, setSelectVal] = useState(cookies.get('i18next'))
+  const [selectVal, setSelectVal] = useState(cookies.get('i18next'));
+  const [activeMenu, setActiveMenu] = useState(false);
   const handleClick = () => {
     cookies.get('i18next') == 'ru' ? cookies.set('i18next', 'uz') : cookies.set('i18next', 'ru')
     setSelectVal(cookies.get('i18next'))
     i18next.changeLanguage(cookies.get('i18next'))
+  }
+
+  const menuToggle = () => {
+    setActiveMenu(prevState => !prevState)
   }
 
   return (
@@ -45,6 +50,32 @@ function Header() {
               <a href="#contact" className="nav__link contact__btn btn">{t('contactBtn')}</a>
             </ul>
           </nav>
+          <div className="media__header">
+            <select onChange={handleClick} value={selectVal} name="language" id="language">
+              <option value="uz">Узбекча</option>
+              <option value="ru">Русский</option>
+            </select>
+            <button onClick={menuToggle} className="menu__toggle">
+              <i class='bx bx-menu'></i>
+            </button>
+            <nav className={`media__header__nav ${activeMenu && 'active'}`} id="media-header">
+              <ul>
+                <li>
+                  <a onClick={menuToggle} href="#hero-section" className="nav__link">{t('navOneLink')}</a>
+                </li>
+                <li>
+                  <a onClick={menuToggle} href="#about-section" className="nav__link">{t('navTwoLink')}</a>
+                </li>
+                <li>
+                  <a onClick={menuToggle} href="#services" className="nav__link">{t('navThreeLink')}</a>
+                </li>
+                <li>
+                  <a onClick={menuToggle} href="#faq-section" className="nav__link">{t('navFourLink')}</a>
+                </li>
+                <a onClick={menuToggle} href="#contact" className="nav__link contact__btn btn">{t('contactBtn')}</a>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
