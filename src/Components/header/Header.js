@@ -51,7 +51,7 @@ function Header() {
             </ul>
           </nav>
           <div className="media__header">
-            <select onChange={handleClick} value={selectVal} name="language" id="language">
+            <select onChange={handleClick} className="mobile__lang__one" value={selectVal} name="language" id="language">
               <option value="uz">Узбекча</option>
               <option value="ru">Русский</option>
             </select>
@@ -71,6 +71,12 @@ function Header() {
                 </li>
                 <li>
                   <a onClick={menuToggle} href="#faq-section" className="nav__link">{t('navFourLink')}</a>
+                </li>
+                <li>
+                  <select onChange={handleClick} value={selectVal} className="mobile__lang__two" name="language" id="language">
+                    <option value="uz">Узбекча</option>
+                    <option value="ru">Русский</option>
+                  </select>
                 </li>
                 <a onClick={menuToggle} href="#contact" className="nav__link contact__btn btn">{t('contactBtn')}</a>
               </ul>
