@@ -984,7 +984,7 @@ a.contact__btn.btn:hover {
   /* ------- MODAL ------- */
   .modal {
     left: 46%;
-    width: 300px;
+    width: 86%;
     height: 320px;
     padding: 25px;
   }
@@ -1036,7 +1036,7 @@ a.contact__btn.btn:hover {
     line-height: 28px !important;
   }
   .type__item {
-    grid-template-rows: 23% auto;
+    grid-template-rows: 20% auto;
   } 
   .type__item img {
     width: 32vw;
