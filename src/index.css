@@ -728,9 +728,6 @@ a.contact__btn.btn:hover {
     font-size: 45px;
     margin: 40px 0;
   }
-  .hero__content p {
-    /* padding-right: 30px; */
-  }
   /* ========= ABOUT ========= */
   .about__grid {
     gap: 35px;
@@ -955,8 +952,6 @@ a.contact__btn.btn:hover {
   }
   .card__item svg {
     width: 50px;
-  }
-  #services-type {
   }
   .services__item img {
     width: 150px;
