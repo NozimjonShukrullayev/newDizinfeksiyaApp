@@ -22,6 +22,9 @@ ul {
 a {
   text-decoration: none;
 }
+select {
+  cursor: pointer;
+}
 
 :root {
   --color-primary: #093FB3;
@@ -152,7 +155,8 @@ a {
 /* ------- IMG MINI SECTION -------- */
 #img-mini-section {
   gap: 25px;
-  height: 580px;
+  padding: 120px;
+  /* height: 580px; */
   display: grid;
   overflow: hidden;
   margin-top: 70px;
@@ -175,6 +179,7 @@ a {
 #img-mini-section > img {
   top: 0;
   left: 0;
+  height: 100%;
   z-index: -1;
   object-fit: cover;
   position: absolute;
@@ -318,6 +323,7 @@ a {
   left: 0;
   z-index: -1;
   object-fit: cover;
+  height: 100%;
   position: absolute;
 }
 .licensia__content {
@@ -411,7 +417,7 @@ a {
 
 /* ========= CONTACT SECtION ============== */
 #contact {
-  padding: 70px 30px;
+  padding: 70px 0px;
 }
 .contact__form {
   display: grid;
@@ -578,6 +584,9 @@ a.contact__btn.btn:hover {
 }
 
 @media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 1120px;
+  }
   /* ========= HERO SECTION ========== */
   .hero__content h1 {
     font-size: 52px;
@@ -604,7 +613,7 @@ a.contact__btn.btn:hover {
     position: relative;
   }
   .media__header__nav {
-    top: 70px;
+    top: 60px;
     right: -50px;
     z-index: 100;
     height: 150vh;
@@ -706,11 +715,14 @@ a.contact__btn.btn:hover {
 }
 
 @media only screen and (max-width: 1015px) {
+  .container {
+    max-width: 1000px;
+  }
   /* ========= HERO SECTION ========== */
   .hero__grid {
     justify-content: center;
     text-align: center;
-    grid-template-columns: 60%;
+    grid-template-columns: 70%;
   }
   .hero__content h1 {
     font-size: 45px;
@@ -729,12 +741,7 @@ a.contact__btn.btn:hover {
     text-align: center;
   }
   #img-mini-section {
-    height: 580px;
-    display: grid;
-    overflow: hidden;
-    margin-top: 70px;
-    position: relative;
-    /* align-items: center; */
+    padding: 80px;
     gap: 0px;
     /* border-radius: 10px; */
     text-align: center;
@@ -773,9 +780,15 @@ a.contact__btn.btn:hover {
 }
 
 @media only screen and (max-width: 915px) {
+  .container {
+    max-width: 880px;
+  }
   .header__logo img,
   .footer__link img {
     width: 200px;
+  }
+  .img__section__content h3 {
+    font-size: 32px !important;
   }
   /* ========= LICENSIA =========== */
   #services-licensia {
@@ -814,25 +827,186 @@ a.contact__btn.btn:hover {
     padding: 16px 26px;
     border-radius: 30px;
   }
+  .paragraph {
+    font-size: 16px;
+  }
 }
-@media only screen and (max-width: 815px) {}
-@media only screen and (max-width: 715px) {}
-@media only screen and (max-width: 615px) {}
-@media only screen and (max-width: 515px) {}
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 815px) {
+  .container {
+    max-width: 780px;
+  }
+  #img-mini-section {
+    padding: 60px;
+  }
+  .contact__form {
+    align-items: center;
+  }
+  .contact__form img {
+    width: 360px;
+  }
+  .contact__box div {
+    width: 280px;
+    height: 370px;
+  }
+  .footer__list {
+    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bx.bxs-map, 
+  .bx-phone-call, 
+  .footer__link .bx.bx-up-arrow-alt {
+    font-size: 20px;
+  }
+  .footer__link p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 715px) {
   .container {
     width: 96%;
   }
+  #hero-section {
+    padding: 150px 0 70px 0;
+  }
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+  .services__item {
+    grid-template-columns: 100%;
+  }
+  .services__type__list {
+    grid-template-columns: 1fr;
+  }
+  .type__item {
+    grid-template-rows: 40% 60%;
+  }
+  #services-licensia {
+    grid-template-columns: 1fr;
+  }
+  .licensia__content h3 {
+    font-size: 24px;
+  }
+  .contact__form {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .contact__form img {
+    justify-self: center;
+    width: 400px;
+  }
+  .contact__box div {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .footer__list {
+    grid-template-columns: 50%;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 615px) {
+  .hero__grid {
+    grid-template-columns: 94%;
+  }
+  #img-mini-section {
+    padding: 20px 0;
+  }
+  #about-btn {
+    margin-top: 25px;
+  }
+}
+@media only screen and (max-width: 515px) {
   .header__grid {
     padding: 15px 0;
     align-items: center;
     justify-content: space-between;
-    grid-template-columns: auto;
+    grid-template-columns: 160px auto;
   }
-  .contact__form {
-    grid-template-columns: 100%;
-    /* background: linear-gradient(#006effb9, #002a79a6); */
+  .header__logo img {
+    width: 150px;
+  }
+  #language {
+    font-size: 16px;
+  }
+  .menu__toggle i {
+    font-size: 18px;
+  }
+  .media__header__nav {
+    top: 45px;
+  }
+  .nav__link {
+    font-size: 16px;
+  }
+  .hero__content h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 25px !important;
+  }
+  h3 {
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+  p {
+    font-size: 16px !important;
+  }
+  #about-section, 
+  #services-type {
+    padding: 35px 0;
+  }
+  .card__item svg {
+    width: 50px;
+  }
+  #services-type {
+  }
+  .services__item img {
+    width: 150px;
+  }
+  .type__item {
+    grid-template-rows: 30% auto;
+  } 
+  .img__section__content {
+    padding: 40px 15px;
+  }
+  .licensia__content {
+    padding: 50px 20px;
+  }
+  /* =========== FAQ ============== */
+  .faq__grid {
+    grid-template-rows: 12% auto;
+  }
+  .faq__item__header {
+    padding: 25px 10px;
+  }
+  /* ========== CONTACT =========== */
+  .contact__box {
+    padding: 35px 0;
+  }
+  .contact__box div {
+    width: 92%;
+    height: 400px;
+  }
+  /* ========== FOOTER =========== */
+  .footer__list {
+    grid-template-columns: 70%;
   }
 
-  
+  /* -------------- ALL PARAMETERS ----------------- */
+  .contact__btn.btn {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}
+@media only screen and (max-width: 415px) {
+  .container {
+    width: 96%;
+  }
+  /* ========= CONTACT =========== */
+  .contact__form {
+    grid-template-columns: 100%;
+  }
+  /* ========= FAQ ========== */
+  .faq__item__header h3 {
+    font-size: 18px !important;
+    line-height: 28px !important;
+  }
 }
