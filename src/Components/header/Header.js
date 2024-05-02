@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 // componentni t qilish. i18nKey="jsondagi nomi"
 import cookies from "js-cookie";
 import i18next from "i18next";
+import logo from "../../assets/logo_trial.png";
 
 function Header() {
   const { t } = useTranslation();
@@ -25,7 +26,7 @@ function Header() {
       <div className="container">
         <div className="header__grid">
           <a href="#index.html" className="header__logo">
-            <img src="https://www.dezinfeksiyatashkent.uz/assets/dez_logo2-5b433e48.png" className="logo__img" />
+            <img src={logo} className="logo__img" />
           </a>
           <nav className="header__nav">
             <ul>

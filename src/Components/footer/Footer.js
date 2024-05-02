@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import logo from "../../assets/logo_trial.png";
 
 function Footer() {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ function Footer() {
         <ul className="footer__list">
           <li>
             <a href="#hero-section" className="footer__link">
-              <img src="https://www.dezinfeksiyatashkent.uz/assets/dez_logo2-5b433e48.png" className="logo__img" />
+              <img src={logo} className="logo__img" />
             </a>
           </li>
           <li>

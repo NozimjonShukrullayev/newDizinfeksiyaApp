@@ -38,7 +38,7 @@ function Services() {
         </div>
         <div id="services-licensia">
           <img src="https://st2.depositphotos.com/3163989/7417/i/950/depositphotos_74177605-stock-photo-composition-of-cleaning-products.jpg" />
-          <div data-aos="fade-right" data-aos-duration="3600" className="licensia__content">
+          <div data-aos="fade-right" data-aos-duration="3600" data-aos-delay="3500" className="licensia__content">
             <img src="https://www.dezinfeksiyatashkent.uz/assets/d3icons-b8f1c170.svg" />
             <h3>{t('licensiaTitle')}</h3>
             <a href="#contact" id="licensia-btn" className="contact__btn btn">{t('contactBtn')}</a>

@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react';
 import { Fragment } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import loader from "../../assets/loader.webp";
 
 i18n
   .use(initReactI18next)
@@ -36,16 +37,38 @@ function App() {
       duration: 1200,
     });
   })
+
+  const [isLoading, setIsLoading] = useState(true);
+  let timer;
+  useEffect(() => {
+    window.onload = () => {
+      timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000)
+
+    }
+    return () => clearTimeout(timer);
+  }, [])
+  
+  
   return (
-    <Fragment>
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Faq />
-      <Contact />
-      <Footer />
-    </Fragment>
+    <>
+      {isLoading ? (
+        <div className='loader'>
+          <img src={loader} width={'100px'} alt="" />
+        </div>
+      ) : (
+        <Fragment>
+          <Header />
+          <Hero />
+          <About />
+          <Services />
+          <Faq />
+          <Contact />
+          <Footer />
+        </Fragment>
+      )}
+    </>
   );
 }
 

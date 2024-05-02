@@ -35,10 +35,21 @@ select {
 }
 
 .container {
-  max-width: 1290px;
   margin: 0 auto;
+  max-width: 1290px;
 }
 
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCFCFF;
+}
+.loader img {
+  width: 270px !important;
+}
 /* ========= SITE HEADER ========= */
 #site-header {
   top: 0;
@@ -83,6 +94,9 @@ select {
 }
 .media__header {
   display: none;
+}
+.header__logo img {
+  width: 250px;
 }
 
 /* ========= HERO SECTION ========== */
