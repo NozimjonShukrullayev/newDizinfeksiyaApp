@@ -23,7 +23,7 @@ function Footer() {
           <li>
             <a href="tel:+998902242299" className="footer__link">
               <i className='bx bx-phone-call'></i>
-              <p>+998 91 588 70 08</p>
+              <p>+998 90 224 22 99</p>
               <i className='bx bx-up-arrow-alt'></i>
             </a>
           </li>
