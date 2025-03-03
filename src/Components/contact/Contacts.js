@@ -61,7 +61,7 @@ function Contact() {
             <div>
               <h4>{t('contactTitle')}</h4>
               <input onChange={(e) => setMyName(e.target.value)} value={myName} name="name" id="name" placeholder={t('contactInputPlaceholder')} required type="text" autoComplete="off" />
-              <input onChange={(e) => setMyPhone(e.target.value)} defaultValue={'+998'} value={myPhone} name="phone" id="phone" placeholder="+998-99-044-99-44" required type="number" autoComplete="off" />
+              <input onChange={(e) => setMyPhone(e.target.value)} defaultValue={'+998'} value={myPhone} name="phone" id="phone" placeholder="+998 (_) (__) (_) (_)" required type="number" autoComplete="off" />
               <button type="submit">{t('contactSubmit')}</button>
             </div>
           </div>
