@@ -14,14 +14,14 @@ function Footer() {
             </a>
           </li>
           <li>
-            <a href="#hero-section" className="footer__link">
+            <a href="https://maps.app.goo.gl/sJZX5YYqvHMHinkv8" className="footer__link">
               <i className='bx bxs-map'></i>
               <p>{t('footerLinkParagraph')}</p>
               <i className='bx bx-up-arrow-alt'></i>
             </a>
           </li>
           <li>
-            <a href="tel:+998915887008" className="footer__link">
+            <a href="tel:+998902242299" className="footer__link">
               <i className='bx bx-phone-call'></i>
               <p>+998 91 588 70 08</p>
               <i className='bx bx-up-arrow-alt'></i>
